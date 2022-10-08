@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
 }
 
 html {
@@ -10,8 +11,179 @@ html {
 }
 
 .container {
-  border: 1px solid red;
   width: 88%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.2rem;
+}
+
+.menu-card {
+  background-color: hsl(235deg, 46%, 20%);
+  border-radius: 1.6rem;
+  width: 100%;
+}
+.menu-card .card-report {
+  background-color: hsl(246deg, 80%, 60%);
+  border-radius: 1.6rem;
+  padding: 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.8rem;
+}
+.menu-card .card-report img {
+  width: 26%;
+  border: 3px solid white;
+  border-radius: 50%;
+}
+.menu-card .card-report .report {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.4rem;
+}
+.menu-card .card-report p {
+  color: hsl(236deg, 100%, 87%);
+  font-size: 1.5rem;
+}
+.menu-card .card-report .name {
+  color: hsl(236deg, 100%, 87%);
+  font-size: 2.4rem;
+  font-weight: 300;
+}
+.menu-card .menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem;
+}
+.menu-card .menu .menu-link {
+  color: hsl(235deg, 45%, 61%);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+.menu-card .menu .menu-link:hover {
+  color: white;
+}
+.menu-card .menu .menu-active {
+  color: white;
+}
+
+.regular-card {
+  width: 100%;
+  border-radius: 1.6rem;
+  background-repeat: no-repeat;
+  background-position: 92% -1rem;
+}
+.regular-card .property-card {
+  position: relative;
+  background-color: hsl(235deg, 46%, 20%);
+  margin-top: 4rem;
+  border-radius: 1.6rem;
+  padding: 2.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+.regular-card .property-card:hover {
+  background-color: hsl(236deg, 41%, 34%);
+}
+.regular-card .property-card .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.regular-card .property-card .row .title {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 500;
+  z-index: 98;
+}
+.regular-card .property-card .row .points {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.regular-card .property-card .row .points:hover .point {
+  background-color: white;
+}
+.regular-card .property-card .row .points:before {
+  content: "";
+  background-color: pink;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 1.6rem;
+  display: none;
+}
+.regular-card .property-card .row .points:hover::before {
+  background-color: hsl(235deg, 46%, 20%);
+  display: block;
+}
+.regular-card .property-card .row .points .point {
+  background-color: hsl(236deg, 100%, 87%);
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  margin: 0.2rem;
+  z-index: 99;
+}
+.regular-card .property-card .row-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 97;
+}
+.regular-card .property-card .hours {
+  color: white;
+  font-size: 3rem;
+  font-weight: 300;
+}
+.regular-card .property-card .description {
+  color: hsl(236deg, 100%, 87%);
+  font-size: 1.5rem;
+}
+
+.work {
+  background-color: hsl(15deg, 100%, 70%);
+  background-image: url(/images/icon-work.svg);
+}
+
+.play {
+  background-color: hsl(195deg, 74%, 62%);
+  background-image: url(/images/icon-play.svg);
+}
+
+.study {
+  background-color: hsl(348deg, 100%, 68%);
+  background-image: url(/images/icon-study.svg);
+}
+
+.exercise {
+  background-color: hsl(145deg, 58%, 55%);
+  background-image: url(/images/icon-exercise.svg);
+}
+
+.social {
+  background-color: hsl(264deg, 64%, 52%);
+  background-image: url(/images/icon-social.svg);
+}
+
+.selfcare {
+  background-color: hsl(43deg, 84%, 65%);
+  background-image: url(/images/icon-self-care.svg);
 }
 
 .attribution {
@@ -21,4 +193,24 @@ html {
 
 .attribution a {
   color: hsl(228deg, 45%, 44%);
+}
+
+@media screen and (min-width: 500px) {
+  .container {
+    display: grid;
+    grid-template-columns: 48% 48%;
+  }
+  .menu-card {
+    grid-column: 1/span 2;
+  }
+  .menu-card .card-report {
+    gap: 3rem;
+  }
+  .regular-card .property-card .row-2 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .regular-card .property-card .row-2 .hours {
+    font-size: 3rem;
+  }
 }/*# sourceMappingURL=style.css.map */
